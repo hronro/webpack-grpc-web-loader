@@ -14,10 +14,10 @@
     "execa": "^1.0.0",
     "grpc-tools": "1.7.1",
     "loader-utils": "^1.2.3",
+    "protoc-gen-grpc-web": "1.0.3",
     "rimraf": "^2.6.3",
     "rollup": "^1.6.0",
     "rollup-plugin-commonjs": "^9.2.1",
-    "schema-utils": "^1.0.0",
-    "zaucy-protoc-gen-grpc-web": "1.0.3-5"
+    "schema-utils": "^1.0.0"
   }
 }
