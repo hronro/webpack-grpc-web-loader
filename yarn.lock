@@ -1459,10 +1459,10 @@ proto-list@~1.2.1:
   resolved "https://registry.yarnpkg.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
   integrity sha1-IS1b/hMYMGpCD2QCuOJv85ZHqEk=
 
-protoc-gen-grpc-web@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/protoc-gen-grpc-web/-/protoc-gen-grpc-web-1.0.4.tgz#b628b9cd46027db9c30a5733bf8a187949b62dcb"
-  integrity sha512-aRS6/QTUGRjXmWSonoSxSAc2Zn/9V1bY7Ai4W8Z1o2lxDHaMDWeywJXOLIzwWaOfhySpTUJfxyM81ulnUQaB5Q==
+protoc-gen-grpc-web@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/protoc-gen-grpc-web/-/protoc-gen-grpc-web-1.0.5.tgz#32d693a46224fb26bdaadab19e386ee48f810d2f"
+  integrity sha512-lUE+bQh9U1Q5ir1avM0lJbCs5nWrgmpRtxfS0QHb7FJSQEaaU9Dpcy6m2tvrHcPHgqiV7KOQRGF6m3kwBrXhEQ==
   dependencies:
     download "^7.1.0"
     fs-extra "^7.0.1"
