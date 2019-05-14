@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { promisify } = require('util');
 
-const { getOptions, interpolateName } = require('loader-utils');
+const { getOptions } = require('loader-utils');
 const validateOptions = require('schema-utils');
 const rimraf = promisify(require('rimraf'));
 const protocGrpcWebPluginPath = require('protoc-gen-grpc-web');
@@ -25,14 +25,24 @@ const optionsSchema = {
   type: 'object',
   properties: {
     protoPath: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'array',
+          items: {
+            type: 'string',
+          },
+        },
+      ],
     },
   },
   required: ['protoPath'],
   additionalProperties: false,
 };
 
-module.exports = async function (content) {
+module.exports = async function webpackGrpcWebLoader (content) {
   const options = getOptions(this);
 
   validateOptions(optionsSchema, options, 'GRPC Web Loader');
@@ -42,7 +52,11 @@ module.exports = async function (content) {
   const tmpdir = await createTmpdir();
 
   const { stdout, stderr } = await execa(protoc, [
-    `-I=${options.protoPath}`,
+    ...(
+      Array.isArray(options.protoPath) ?
+        options.protoPath.map(protoPath => `-I=${protoPath}`) :
+        [`-I=${options.protoPath}`]
+    ),
     `--plugin=protoc-gen-grpc-web=${protocGrpcWebPluginPath}`,
     `--js_out=import_style=commonjs:${tmpdir}`,
     `--grpc-web_out=import_style=commonjs,mode=grpcwebtext:${tmpdir}`,
