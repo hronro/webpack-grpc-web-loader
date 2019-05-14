@@ -1,6 +1,6 @@
 {
   "name": "webpack-grpc-web-loader",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A webpack loader to load .proto files for grpc-web with effortless setup.",
   "main": "index.js",
   "repository": {
