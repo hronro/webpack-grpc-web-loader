@@ -68,6 +68,6 @@ client.helloWorld(helloRequest, {}, (err, res) => {
 
 ## Options
 
-| Option Name |        Type       | Required | Default Value |               Description               |
-|-------------|:-----------------:|:--------:|:-------------:|:---------------------------------------:|
-| protoPath   | string | string[] |   true   |      N/A      | Same as `--proto_path` (`-I`) in protoc |
+| Option Name |        Type        | Required | Default Value |               Description               |
+|-------------|:------------------:|:--------:|:-------------:|:---------------------------------------:|
+| protoPath   | string \| string[] |   true   |      N/A      | Same as `--proto_path` (`-I`) in protoc |
