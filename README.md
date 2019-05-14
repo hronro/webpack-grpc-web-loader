@@ -40,6 +40,20 @@ module.exports = {
 };
 ```
 
+If you have multiple proto paths, you can pass an array to the option `protoPath`:
+
+```javascript
+{
+  loader: 'webpack-grpc-web-loader',
+  options: {
+    protoPath: [
+      path.resolve(__dirname, './src/my-protos-1'),
+      path.resolve(__dirname, './src/my-protos-2'),
+    ],
+  },
+}
+```
+
 ### In your src
 
 ```javascript
@@ -54,6 +68,6 @@ client.helloWorld(helloRequest, {}, (err, res) => {
 
 ## Options
 
-| Option Name | Required | Default Value | Description                             |
-|:-----------:|:--------:|--------------:|-----------------------------------------|
-|  protoPath  |   true   |               | Same as `--proto_path` (`-I`) in protoc |
+| Option Name |        Type       | Required | Default Value |               Description               |
+|-------------|:-----------------:|:--------:|:-------------:|:---------------------------------------:|
+| protoPath   | string | string[] |   true   |      N/A      | Same as `--proto_path` (`-I`) in protoc |
