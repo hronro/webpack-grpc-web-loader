@@ -12,7 +12,7 @@
   "private": false,
   "dependencies": {
     "execa": "^1.0.0",
-    "grpc-tools": "1.7.2",
+    "grpc-tools": "^1.12.4",
     "loader-utils": "^1.2.3",
     "protoc-gen-grpc-web": "^1.5.0",
     "rimraf": "^2.6.3",
